@@ -55,20 +55,26 @@ navSlide();
 
 const navAs = document.querySelector('.navbar-menu');
 
-navAs.addEventListener('click', () => {
-    if (document.body.classList.contains('freeze')) {
-        document.body.classList.remove('freeze')
-    }
+navAs.addEventListener('click', (e) => {
 
-    if (nav.classList.contains('nav-active')) {
-        nav.classList.remove('nav-active')
-        burger.classList.remove('toggle')
-    }
-
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
+    if (e.target.id === "navlis") {
+        if (document.body.classList.contains('freeze')) {
+            document.body.classList.remove('freeze')
         }
-    });
+
+        if (nav.classList.contains('nav-active')) {
+            nav.classList.remove('nav-active')
+            burger.classList.remove('toggle')
+        }
+
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            }
+        });
+    } else {
+        e.preventDefault();
+    }
+
 });
 
