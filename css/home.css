@@ -46,6 +46,7 @@ nav {
     
 }
 .logo h1 {
+    font-size: 1.5rem;
     color: #fff;
     margin: 2vh 0 2vh 2vw;
     letter-spacing: 2.1px;
@@ -56,7 +57,7 @@ nav {
     color: #fff;
     margin: 2vh 2vw 2vh 0vw;
     display: flex;
-    width: 25vw;
+    width: 30vw;
     justify-content: space-between;
     list-style-type:none;
     letter-spacing: 1.8px;
@@ -68,6 +69,7 @@ nav {
 }
 
 .navbar-menu a {
+    font-size: 1.1rem;
     text-decoration: none;
     color: #fff;
 }
@@ -147,14 +149,26 @@ nav {
 
 
 .portfolio {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 2vw;
+    padding: 0 2vw 0 2vw;
     
     
     background: rgba(0,0,0);
+}
+
+.portfolio-section-header {
+    
+    color: #fff;
+    margin: 3vh 0 4vh 1vw;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.websites-header {
+    margin-top: 4vh;
 }
 
 .portfolio h2 {
@@ -165,18 +179,26 @@ nav {
     overflow-y: hidden;
 }
 
+
 .portfolio-content {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    height: auto;
+    margin-bottom: 8vh;
+    padding-bottom: 4vh;
     
     
+}
+
+.dashed-line {
+    border-bottom: 1px dashed #616161;
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 50%;
     color: #fff;
     
     
@@ -184,7 +206,7 @@ nav {
 }
 
 .description h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 2vh;
 }
 
@@ -194,7 +216,7 @@ nav {
 }
 .icons-and-button {
     
-    margin-top: 2vh;
+    margin-top: 6vh;
     
     display: flex;
     justify-content: space-evenly;
@@ -215,6 +237,8 @@ nav {
 
 
 
+
+
 .icons-and-button i:hover {
     width: auto;
 color:#FF595E
@@ -225,21 +249,24 @@ color:#FF595E
     color: #fff;
 }
 
+
+
 .portfolio-content img {
     height: auto;
     width: 45%;
-    margin: 0 2vw 2vh 2vw;
+    margin: 0 0 2vh 0;
 }
 
 .contact {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: auto;
     display: flex;
     
 }
 
 .contact-content {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -376,6 +403,10 @@ color:#FF595E
         
     }
 
+    .portfolio-section-header {
+        margin: 0 0 2vh 0;
+    }
+
     .portfolio h2 {
         font-size: 32px;
         margin: 10vh 0vw 15vh 0;
@@ -405,25 +436,28 @@ color:#FF595E
         font-size: 1.4rem;
     }
     .description img {
-        width: 100vw;
+        width: 100%;
         height: auto;
         align-self: center;
         margin: 10vh;
     }
 
     .icons-and-button {
+        margin: 0;
         display: flex;
-        flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: space-around;
-        height: 180px;
+        height: auto;
     }
 
     .icons-and-button button {
-        width: 50%;
         font-size: 1.5rem;
 
+    }
+
+    .icons-and-button a.live-demo {
+        width: 50%;
     }
 
     .icons-and-button i {
@@ -440,8 +474,13 @@ color:#FF595E
         
     }
 
+    .contact-content h3 {
+        margin-top: 0vh;
+    }
+
     .contact-content p {
-        margin: 0 4vw;
+        text-align: center;
+        
         
     }
 
