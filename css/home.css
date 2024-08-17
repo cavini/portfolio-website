@@ -175,12 +175,12 @@ nav {
   align-items: flex-start;
   justify-content: space-around;
   height: auto;
-  margin-bottom: 8vh;
-  padding-bottom: 4vh;
+  margin-top: 8vh;
+  padding-top: 4vh;
 }
 
 .dashed-line {
-  border-bottom: 1px dashed #616161;
+  border-top: 1px dashed #616161;
 }
 
 .description {
