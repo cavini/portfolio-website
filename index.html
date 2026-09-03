@@ -11,16 +11,32 @@
   <link rel="stylesheet" href="./css/home.css" />
   <title>Arthur Cavini | Fullstack Developer</title>
 
-  <meta name="description" content="Fullstack Developer. Currently focusing on the MERN Stack and Pure JavaScript." />
+  <meta name="description"
+    content="Arthur Cavini is a fullstack developer building production web apps with React, TypeScript, Node.js and Svelte — including the Satlantis Web3 social network and the InstaCarro e-commerce platform." />
   <meta name="keywords"
-    content="javascript, react, react.js, node, nodejs, html, css, sass, html5, css3, express, express.js, axios, developer, fullstack developer, web developer, MERN, mern stack, web dev, web, webapp, webapps, node.js, reactjs, front end developer, back end developer, sql, mysql" />
+    content="Arthur Cavini, fullstack developer, front end developer, react, typescript, node.js, express, svelte, web3, nostr, next.js, javascript, web developer" />
   <meta name="author" content="Arthur Cavini" />
   <link rel="shortcut icon" type="image/ico" href="./resources/favicon.ico" />
-  <!-- Test meta tag -->
+  <link rel="canonical" href="https://www.arthurcavini.com/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.arthurcavini.com/" />
+  <meta property="og:title" content="Arthur Cavini | Fullstack Developer" />
+  <meta property="og:description"
+    content="Fullstack developer building production web apps with React, TypeScript, Node.js and Svelte." />
+  <meta property="og:image" content="https://www.arthurcavini.com/resources/satlantis.webp" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arthur Cavini | Fullstack Developer" />
+  <meta name="twitter:description"
+    content="Fullstack developer building production web apps with React, TypeScript, Node.js and Svelte." />
+  <meta name="twitter:image" content="https://www.arthurcavini.com/resources/satlantis.webp" />
 </head>
 
 <body>
+  <a href="#portfolio" class="skip-link">Skip to content</a>
   <section id="home">
     <header class="hero">
       <nav>
@@ -28,23 +44,24 @@
           <h1>Arthur Cavini</h1>
         </div>
         <div class="nav-items">
-          <ul class="navbar-menu">
+          <ul class="navbar-menu" id="primary-navigation">
             <li class="navbar-menu-items">
-              <a href="#home" id="navlis">Home</a>
+              <a href="#home" class="navlink">Home</a>
             </li>
             <li class="navbar-menu-items">
-              <a href="#portfolio" id="navlis">Portfolio</a>
+              <a href="#portfolio" class="navlink">Portfolio</a>
             </li>
             <li class="navbar-menu-items">
-              <a href="#contact" id="navlis">Contact</a>
+              <a href="#contact" class="navlink">Contact</a>
             </li>
           </ul>
         </div>
-        <div class="burger">
+        <button class="burger" type="button" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="primary-navigation">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
-        </div>
+        </button>
       </nav>
 
       <div class="content">
@@ -63,69 +80,78 @@
       <h3 class="portfolio-section-header">Web Apps</h3>
 
       <div class="portfolio-content">
-        <img class="desktop-picture" src="./resources/bite-express.png" alt="react webapp" />
+        <img class="desktop-picture" src="./resources/satlantis.webp"
+          alt="Satlantis event page for a decentralized Web3 social network" width="1917" height="874"
+          loading="lazy" />
 
         <div class="description">
-          <h3>Bite Express</h3>
+          <h3>Satlantis</h3>
           <p>
-            Bite Express is a full-stack MERN app designed to make food ordering and restaurant management easy. On the
-            frontend, it uses React and TypeScript, with React Query for data handling, custom hooks, and
-            React-Router-Dom with the Render as You Fetch pattern for smooth navigation. Tailwind CSS is used for
-            styling, while Auth0 manages authentication, and Stripe handles payments. Cloudinary is integrated for image
-            management, and Vite powers the development process. Zod is used for schema validation, and React Hook Form
-            simplifies form management.
+            Satlantis is a decentralized social network built on the Nostr Web3 protocol, giving people a
+            censorship-resistant place to connect, share, and organize. As a Senior Front End Developer, I build
+            front-end features with the Svelte framework — including a real-time chat application powered by WebSockets
+            and Nostr relays, and a social event tool with full RSVP functionality.
             <br />
             <br />
-            The backend is built with Node.js and Express, with MongoDB as the database, and Mongoose for data modeling.
-            Webhooks are implemented for real-time updates, particularly with Stripe for payment status. JWT is used for
-            secure token-based authentication.
-
-            Users can search for restaurants, filter by cuisine, place orders, and track deliveries in real-time.
-            Restaurant owners can create profiles, manage menus, accept orders, and update order statuses live. Bite
-            Express brings together a robust tech stack to provide a seamless experience for both customers and
-            restaurant owners.
+            This is a live product used by a growing community, not a demo. You can explore it at satlantis.io.
           </p>
 
-          <img src="./resources/bite-express.png" alt="fullstack app" class="mobile-picture" />
+          <div class="tech-pills">
+            <span class="pill" style="--c:#ff3e00">Svelte</span>
+            <span class="pill" style="--c:#4fa3ec">TypeScript</span>
+            <span class="pill" style="--c:#b388ff">Nostr Protocol</span>
+            <span class="pill" style="--c:#f6c343">Web3</span>
+            <span class="pill" style="--c:#4f9cf9">WebSockets</span>
+          </div>
+
+          <img src="./resources/satlantis.webp"
+            alt="Satlantis event page for a decentralized Web3 social network" class="mobile-picture" width="1917"
+            height="874" loading="lazy" />
 
           <div class="icons-and-button">
-            <a href="https://github.com/cavini/bite-express-frontend" target="_blank" alt="bite express react app"><i
-                class="fab fa-github fa-2x"></i>
-              <a href="https://bite-express-frontend.onrender.com" target="_blank" class="live-demo"
-                alt="bite express react app">Live
-                Demo</a>
-            </a>
-
-            <!-- <a href="https://the-movie--app.herokuapp.com" target="_blank" class="live-demo"
-                  alt="nodejs app">Live Demo</a> -->
+            <a href="https://www.satlantis.io/" target="_blank" rel="noopener" class="live-demo"
+              aria-label="Visit the Satlantis website">Visit Website</a>
           </div>
         </div>
       </div>
       <div class="portfolio-content dashed-line">
         <div class="description">
-          <h3>The Split Bill Project</h3>
+          <h3>InstaCarro</h3>
           <p>
-            React application made for people to split the value of the bill
-            with friends and keep track of it. It allows the user to add
-            friends and split the bill with a simple but intuitive UI.
+            InstaCarro is a production e-commerce platform in the automotive space that lets people sell their car
+            quickly and safely without leaving home. I built the platform from scratch using Next.js with TypeScript,
+            implementing a responsive UI with Bootstrap and a comprehensive testing suite with Jest and Cypress. On the
+            back end, I created REST API endpoints with Node.js and Express in TypeScript.
+            <br />
+            <br />
+            This is a real product serving customers across Brazil, not a demo. You can explore it at lp.instacarro.com.
           </p>
 
-          <img src="./resources/split the bill project.png" alt="react app" class="mobile-picture" />
+          <div class="tech-pills">
+            <span class="pill" style="--c:#ffffff">Next.js</span>
+            <span class="pill" style="--c:#4fa3ec">TypeScript</span>
+            <span class="pill" style="--c:#a07cd4">Bootstrap</span>
+            <span class="pill" style="--c:#83cd29">Node.js</span>
+            <span class="pill" style="--c:#d0d0d0">Express</span>
+            <span class="pill" style="--c:#f0603c">Jest</span>
+            <span class="pill" style="--c:#58c99a">Cypress</span>
+          </div>
+
+          <img src="./resources/instacarro.webp" alt="InstaCarro landing page for selling cars online"
+            class="mobile-picture" width="1917" height="957" loading="lazy" />
 
           <div class="icons-and-button">
-            <a href="https://github.com/cavini/split-bill-project" target="_blank" alt="react app"><i
-                class="fab fa-github fa-2x"></i>
-            </a>
-
-            <a href="https://main--split-bill-project.netlify.app/" target="_blank" class="live-demo"
-              alt="react app">Live Demo</a>
+            <a href="https://lp.instacarro.com/" target="_blank" rel="noopener" class="live-demo"
+              aria-label="Visit the InstaCarro website">Visit Website</a>
           </div>
         </div>
-        <img class="desktop-picture" src="./resources/split the bill project.png" alt="react webapp" />
+        <img class="desktop-picture" src="./resources/instacarro.webp"
+          alt="InstaCarro landing page for selling cars online" width="1917" height="957" loading="lazy" />
       </div>
 
       <div class="portfolio-content dashed-line">
-        <img class="desktop-picture" src="./resources/OrderPizza.png" alt="react webapp" />
+        <img class="desktop-picture" src="./resources/OrderPizza.webp" alt="Order Pizza web app ordering interface"
+          width="1915" height="872" loading="lazy" />
 
         <div class="description">
           <h3>Order Pizza</h3>
@@ -145,58 +171,26 @@
             App.
           </p>
 
-          <img src="./resources/OrderPizza.png" alt="fullstack app" class="mobile-picture" />
+          <div class="tech-pills">
+            <span class="pill" style="--c:#61dafb">React</span>
+            <span class="pill" style="--c:#4fa3ec">TypeScript</span>
+            <span class="pill" style="--c:#a259ec">Redux</span>
+            <span class="pill" style="--c:#38bdf8">Tailwind CSS</span>
+            <span class="pill" style="--c:#ffa657">Vite</span>
+          </div>
+
+          <img src="./resources/OrderPizza.webp" alt="Order Pizza web app ordering interface" class="mobile-picture"
+            width="1915" height="872" loading="lazy" />
 
           <div class="icons-and-button">
-            <a href="https://github.com/cavini/order-pizza" target="_blank" alt="react app"><i
-                class="fab fa-github fa-2x"></i>
-              <a href="https://cheery-pothos-770338.netlify.app/" target="_blank" class="live-demo" alt="react app">Live
-                Demo</a>
-            </a>
-
-            <!-- <a href="https://the-movie--app.herokuapp.com" target="_blank" class="live-demo"
-                  alt="nodejs app">Live Demo</a> -->
+            <a href="https://github.com/cavini/order-pizza" target="_blank" rel="noopener"
+              aria-label="Order Pizza source code on GitHub"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://cheery-pothos-770338.netlify.app/" target="_blank" rel="noopener" class="live-demo"
+              aria-label="Open the Order Pizza live demo">Live Demo</a>
           </div>
         </div>
       </div>
-
-      <!-- <h3 class="portfolio-section-header websites-header">Websites</h3>
-        <div class="portfolio-content">
-          <img
-            class="desktop-picture"
-            src="./resources//website homepage.PNG"
-            alt=""
-          />
-
-          <div class="description">
-            <h3>Psicopedagoga Sandra Cavini</h3>
-            <p>
-              This website was created for a Educational Psychologist based in
-              Brazil. It uses a simple but tasteful design, created to make the
-              user experience as smooth and effortless as possible for users of
-              all ages. The CSS properties of all elements on this page are not
-              fixed values, meaning that they are not only mobile friendly, but
-              also that they fit any screen. The mobile menu was created with
-              pure javascript and CSS animations.
-            </p>
-
-            <img
-              src="./resources/website homepage.PNG"
-              alt=""
-              class="mobile-picture"
-            />
-
-            <div class="icons-and-button">
-              <a
-                href="https://gifted-keller-f71d38.netlify.app"
-                target="_blank"
-                class="live-demo"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-        </div> -->
-      <!-- </div> -->
+    </div>
   </section>
   <section id="contact">
     <div class="contact">
@@ -212,10 +206,12 @@
                                 class="fab fa-twitter fa-3x"></i></a></li> -->
 
           <li>
-            <a href="https://www.linkedin.com/in/cavini/" target="_blank"><i class="fab fa-linkedin-in fa-3x"></i></a>
+            <a href="https://www.linkedin.com/in/cavini/" target="_blank" rel="noopener"
+              aria-label="Arthur Cavini on LinkedIn"><i class="fab fa-linkedin-in fa-3x"></i></a>
           </li>
           <li>
-            <a href="https://t.me/arthurcavini" target="_blank"><i class="fab fa-telegram fa-3x"></i></a>
+            <a href="https://t.me/arthurcavini" target="_blank" rel="noopener"
+              aria-label="Arthur Cavini on Telegram"><i class="fab fa-telegram fa-3x"></i></a>
           </li>
         </ul>
       </div>

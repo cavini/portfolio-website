@@ -22,6 +22,10 @@ const navSlide = () => {
     });
 
     burger.classList.toggle("toggle");
+    burger.setAttribute(
+      "aria-expanded",
+      String(nav.classList.contains("nav-active"))
+    );
   });
 };
 
@@ -30,7 +34,7 @@ navSlide();
 const navAs = document.querySelector(".navbar-menu");
 
 navAs.addEventListener("click", (e) => {
-  if (e.target.id === "navlis") {
+  if (e.target.classList.contains("navlink")) {
     if (document.body.classList.contains("freeze")) {
       document.body.classList.remove("freeze");
     }
@@ -38,6 +42,7 @@ navAs.addEventListener("click", (e) => {
     if (nav.classList.contains("nav-active")) {
       nav.classList.remove("nav-active");
       burger.classList.remove("toggle");
+      burger.setAttribute("aria-expanded", "false");
     }
 
     navLinks.forEach((link, index) => {
