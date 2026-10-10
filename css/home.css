@@ -769,12 +769,6 @@ strong {
   background: var(--surface-hover);
 }
 
-/* No screenshot to show, so the body spans the card instead of sitting in the
-   media column with empty space beside it. */
-.side-card-plain {
-  grid-template-columns: minmax(0, 1fr);
-}
-
 .side-card-media img {
   width: 100%;
   border-radius: var(--r-sm);

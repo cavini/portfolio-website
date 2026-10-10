@@ -271,18 +271,25 @@
         <div class="side-projects reveal">
           <h3 class="side-projects-title">Side projects</h3>
 
-          <article class="side-card side-card-plain">
+          <article class="side-card">
+            <div class="side-card-media">
+              <img src="./resources/overtone.webp" alt="Overtone episode results with word counts and top terms"
+                width="1911" height="950" loading="lazy" decoding="async" />
+            </div>
             <div class="side-card-body">
               <h4>Overtone</h4>
-              <p>Analytics for a Brazilian Portuguese podcast recorded by a group of friends. You upload a
-                finished episode; it transcribes the audio and reports what was actually said — word and term
-                frequency, how often each named running joke came up, a timestamp behind every number. A two-hour
-                episode is split in the browser and uploaded straight to object storage, because a serverless
-                function only accepts about 4.5 MB of request body. Clean Architecture across four layers with the
-                dependency rule enforced in CI, ports and adapters covered by contract suites that run against
-                both fakes and real implementations, around 800 tests, and the decisions recorded as ADRs.
-                Bilingual in Portuguese and English, and it runs entirely on free tiers with no payment method
-                anywhere.</p>
+              <p>Analytics for a Brazilian Portuguese podcast that a group of my friends records. You upload a
+                finished episode, it transcribes the audio, and then it tells you what was actually said: word and
+                term frequency, how often each running joke came up, and a timestamp behind every number so you
+                can go and hear it for yourself. A two-hour episode gets split up in the browser and uploaded
+                straight to object storage, because a serverless function only accepts about 4.5 MB of request
+                body. Behind that it's Clean Architecture across four layers with the dependency rule enforced in
+                CI, ports and adapters covered by contract suites that run against the fakes and the real
+                implementations, around 800 tests, and every decision written down as an ADR. It's bilingual in
+                Portuguese and English, and the whole thing runs on free tiers with no payment method anywhere.
+                That is also the catch. Transcription is paced against a free hourly allowance and there's only
+                about a gigabyte of storage, so it's slow and it can't hold much. That's the free tiers, not the
+                code. Point it at paid infrastructure and the same app scales up without a rewrite.</p>
               <ul class="tech-pills tech-pills-sm" aria-label="Technologies used">
                 <li class="pill" style="--c:#e8e8e8">Next.js</li>
                 <li class="pill" style="--c:#4fa3ec">TypeScript</li>
@@ -302,7 +309,7 @@
                 </a>
                 <a href="https://overtone-five.vercel.app" target="_blank" rel="noopener"
                   aria-label="Open the Overtone live demo, which is password-protected">
-                  Live demo &mdash; password-protected
+                  Live demo (password-protected)
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M7 17 17 7M9 7h8v8" />
