@@ -278,18 +278,21 @@
             </div>
             <div class="side-card-body">
               <h4>Overtone</h4>
-              <p>Analytics for a Brazilian Portuguese podcast that a group of my friends records. You upload a
-                finished episode, it transcribes the audio, and then it tells you what was actually said: word and
-                term frequency, how often each running joke came up, and a timestamp behind every number so you
-                can go and hear it for yourself. A two-hour episode gets split up in the browser and uploaded
-                straight to object storage, because a serverless function only accepts about 4.5 MB of request
-                body. Behind that it's Clean Architecture across four layers with the dependency rule enforced in
-                CI, ports and adapters covered by contract suites that run against the fakes and the real
-                implementations, around 800 tests, and every decision written down as an ADR. It's bilingual in
-                Portuguese and English, and the whole thing runs on free tiers with no payment method anywhere.
-                That is also the catch. Transcription is paced against a free hourly allowance and there's only
-                about a gigabyte of storage, so it's slow and it can't hold much. That's the free tiers, not the
-                code. Point it at paid infrastructure and the same app scales up without a rewrite.</p>
+              <p>Analytics for podcast producers. Upload a finished episode and it tells you what was
+                actually said: word and term frequency, how often each recurring bit came up, and a timestamp
+                behind every number so you can go and hear it. Search a whole back catalogue for the moment a
+                subject came up, and name the running bits you want counted across every episode. A two-hour
+                episode gets split up in the browser and uploaded straight to object storage, because a
+                serverless function only accepts about 4.5 MB of request body, and transcription is paced
+                against a provider allowance that refills as it goes, so the work outlives any single request.
+                Behind that it's Clean Architecture across four layers with the dependency rule enforced in CI,
+                ports and adapters covered by contract suites that run against the fakes and the real
+                implementations, over 950 tests, and every decision written down as an ADR. Built for Brazilian
+                Portuguese first, with the language chosen per episode, and bilingual throughout. It runs on
+                free tiers with no payment method anywhere, which is also the catch: the hourly transcription
+                allowance is small and there's about a gigabyte of storage, so it's slow and can't hold much.
+                That's the tiers rather than the code, and paid infrastructure scales the same app without a
+                rewrite.</p>
               <ul class="tech-pills tech-pills-sm" aria-label="Technologies used">
                 <li class="pill" style="--c:#e8e8e8">Next.js</li>
                 <li class="pill" style="--c:#4fa3ec">TypeScript</li>
