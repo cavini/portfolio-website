@@ -760,9 +760,19 @@ strong {
   transition: border-color var(--t-base) var(--ease), background var(--t-base) var(--ease);
 }
 
+.side-card + .side-card {
+  margin-top: 1rem;
+}
+
 .side-card:hover {
   border-color: var(--border-strong);
   background: var(--surface-hover);
+}
+
+/* No screenshot to show, so the body spans the card instead of sitting in the
+   media column with empty space beside it. */
+.side-card-plain {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .side-card-media img {
