@@ -164,9 +164,12 @@
 
         <article class="project reveal">
           <div class="project-media">
-            <img src="./resources/satlantis.webp"
-              alt="Satlantis event page for a decentralized Web3 social network" width="1917" height="874"
-              loading="lazy" decoding="async" />
+            <a class="media-zoom" href="./resources/satlantis.webp" target="_blank"
+              rel="noopener" aria-label="Open the full-size screenshot">
+              <img src="./resources/satlantis.webp"
+                alt="Satlantis event page for a decentralized Web3 social network" width="1917" height="874"
+                loading="lazy" decoding="async" />
+            </a>
           </div>
 
           <div class="project-body">
@@ -217,8 +220,11 @@
 
         <article class="project project-reverse reveal">
           <div class="project-media">
-            <img src="./resources/instacarro.webp" alt="InstaCarro landing page for selling cars online"
-              width="1917" height="957" loading="lazy" decoding="async" />
+            <a class="media-zoom" href="./resources/instacarro.webp" target="_blank"
+              rel="noopener" aria-label="Open the full-size screenshot">
+              <img src="./resources/instacarro.webp" alt="InstaCarro landing page for selling cars online"
+                width="1917" height="957" loading="lazy" decoding="async" />
+            </a>
           </div>
 
           <div class="project-body">
@@ -273,31 +279,40 @@
 
           <article class="side-card">
             <div class="side-card-media">
-              <img src="./resources/precinho.webp"
-                alt="Precinho product page comparing one bottle of olive oil across eight supermarkets"
-                width="1893" height="875" loading="lazy" decoding="async" />
+              <a class="media-zoom" href="./resources/precinho.webp" target="_blank"
+                rel="noopener" aria-label="Open the full-size screenshot">
+                <img src="./resources/precinho.webp"
+                  alt="Precinho product page comparing one bottle of olive oil across eight supermarkets"
+                  width="1893" height="875" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="side-card-body">
               <h4>Precinho</h4>
-              <p>Grocery price comparison for one city. Ten supermarket chains behind a single search box:
-                type a product and see what every shop nearby charges for it right now, cheapest first, with
-                a link straight to the item on the shop&rsquo;s own site. Prices are collected from the chains
-                themselves every night and kept as history rather than overwritten, so every figure on screen
-                is a reading with a timestamp on it. The screen is the easy half. Each chain runs different
-                e-commerce software &mdash; six platforms across the ten &mdash; so they sit behind one port
-                with an adapter each. Prices turn out to be regional, which none of them advertise: the same
-                company charges different amounts in different towns, and proving it meant checking every
-                chain&rsquo;s answers against a control address 3,000&nbsp;km away, because an endpoint
-                compared against itself will always agree. One chain only honours its branch if you pass it
-                as a cart id; the twenty-four other spellings it accepts are quietly ignored. And the same
-                product is named differently in every shop, so matching runs barcode first, then package
-                size, then a language model to judge what survives &mdash; 44,929 pairs judged, every verdict
-                stored so a new collection inherits the matching instead of redoing it. Clean Architecture
-                with the dependency rule pointing one way, 669 tests across unit, integration and component
-                suites with coverage thresholds enforced in CI, structured logs and metrics on every read,
-                and Big O written beside the decisions it justifies. It runs entirely on free tiers, which
-                cancel any query past three seconds &mdash; a constraint that turned out to be useful, since
-                it forces every slow query to be measured and fixed rather than tolerated.</p>
+              <p>A price comparison app for one city. Ten supermarket chains, one search box. You
+                type a product and you see what every shop near you charges for it right now,
+                cheapest first, with a link straight to that item on the shop&rsquo;s own site. The
+                prices come from the chains themselves. A job runs every night and writes a new row
+                instead of overwriting the old one, so every number on screen has a date and a time
+                attached to it.</p>
+              <p>The screen was the easy half. The ten chains run six different e-commerce platforms
+                between them, so each one gets its own adapter behind a single interface. Prices also
+                turn out to be regional, which none of the chains tell you. The same company charges
+                different amounts in different towns, and proving that meant checking each
+                chain&rsquo;s answers against a control address 3,000&nbsp;km away, because an
+                endpoint compared against itself will always agree. One chain only respects the
+                branch you ask for if you send it as a cart id. The other twenty-four ways of sending
+                it are accepted and quietly ignored.</p>
+              <p>Then there is the matching. The same bottle of olive oil carries a different name in
+                every shop, so the app tries the barcode first, then the package size, and hands
+                whatever is left to a language model to judge. 44,929 pairs went through that and
+                every verdict is stored, so the next collection inherits the work instead of paying
+                for it again.</p>
+              <p>Underneath it is Clean Architecture with the dependency rule pointing one way, 669
+                tests across unit, integration and component suites, coverage thresholds enforced in
+                CI, structured logs and metrics on every read, and Big O written next to the
+                decisions that needed it. The whole thing runs on free tiers. Postgres cancels any
+                query that takes longer than three seconds, which sounds like a limitation but kept
+                me honest. Every slow query had to be measured and fixed instead of tolerated.</p>
               <ul class="tech-pills tech-pills-sm" aria-label="Technologies used">
                 <li class="pill" style="--c:#e8e8e8">Next.js</li>
                 <li class="pill" style="--c:#4fa3ec">TypeScript</li>
@@ -329,8 +344,11 @@
 
           <article class="side-card">
             <div class="side-card-media">
-              <img src="./resources/overtone.webp" alt="Overtone episode results with word counts and top terms"
-                width="1911" height="950" loading="lazy" decoding="async" />
+              <a class="media-zoom" href="./resources/overtone.webp" target="_blank"
+                rel="noopener" aria-label="Open the full-size screenshot">
+                <img src="./resources/overtone.webp" alt="Overtone episode results with word counts and top terms"
+                  width="1911" height="950" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="side-card-body">
               <h4>Overtone</h4>
@@ -380,8 +398,11 @@
 
           <article class="side-card">
             <div class="side-card-media">
-              <img src="./resources/OrderPizza.webp" alt="Order Pizza web app ordering interface" width="1915"
-                height="872" loading="lazy" decoding="async" />
+              <a class="media-zoom" href="./resources/OrderPizza.webp" target="_blank"
+                rel="noopener" aria-label="Open the full-size screenshot">
+                <img src="./resources/OrderPizza.webp" alt="Order Pizza web app ordering interface" width="1915"
+                  height="872" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="side-card-body">
               <h4>Order Pizza</h4>

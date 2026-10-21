@@ -33,6 +33,11 @@
 
   /* rhythm */
   --container: 1180px;
+  /* 1180 is a comfortable reading width, and on a 1440 laptop it is most
+     of the screen. On a 3440 ultrawide it is a third of it, which is what
+     made every screenshot on the page look like a thumbnail. The measure
+     for running text is capped separately, so widening this grows the
+     media without turning paragraphs into one-line sprawl. */
   --gutter: clamp(1.25rem, 5vw, 3.5rem);
   --section-y: clamp(4.5rem, 8vw, 7rem);
   --header-h: 72px;
@@ -641,7 +646,11 @@ strong {
 /* -------------------------------------------------------------- 9. Projects */
 .project {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  /* The media column is the wider one. Stated again under .project-reverse
+     because `order` moves the image to the second column without taking
+     its width along, which is why the reversed cards used to show a
+     noticeably smaller screenshot than the ones beside them. */
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
   padding-block: clamp(2.5rem, 5vw, 4.5rem);
@@ -651,6 +660,10 @@ strong {
 .project:first-of-type {
   border-top: none;
   padding-top: 0;
+}
+
+.project-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
 }
 
 .project-reverse .project-media {
@@ -750,9 +763,12 @@ strong {
 
 .side-card {
   display: grid;
-  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-  gap: clamp(1.25rem, 3vw, 2.25rem);
-  align-items: center;
+  /* Stacked rather than side by side. These are 1900px-wide screenshots
+     and a 260px column rendered them at a seventh of their size, which is
+     small enough that nothing in them could be read. Full card width is
+     about four times that. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
   padding: 1.25rem;
   border-radius: var(--r-md);
   border: 1px solid var(--border);
@@ -769,15 +785,33 @@ strong {
   background: var(--surface-hover);
 }
 
+.side-card-media {
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 0.4rem;
+  overflow: hidden;
+}
+
 .side-card-media img {
+  display: block;
   width: 100%;
   border-radius: var(--r-sm);
-  opacity: 0.75;
-  transition: opacity var(--t-base) var(--ease);
+  /* Was dimmed to 0.75 and lifted on hover. At this size the screenshot
+     is the point of the card, so it is shown as it is. */
+  transition: transform 0.6s var(--ease);
 }
 
 .side-card:hover .side-card-media img {
-  opacity: 1;
+  transform: scale(1.015);
+}
+
+.media-zoom {
+  display: block;
+  cursor: zoom-in;
+  border: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .side-card-body h4 {
@@ -788,6 +822,15 @@ strong {
 .side-card-body p {
   color: var(--text-muted);
   font-size: 0.92rem;
+  /* Justified across the full card. Hyphenation comes with it rather
+     than as a nicety: at this measure, justifying without it opens rivers
+     of white space between the words. */
+  text-align: justify;
+  hyphens: auto;
+}
+
+.side-card-body p + p {
+  margin-top: 0.85rem;
 }
 
 .side-card-body .tech-pills {
@@ -1072,6 +1115,18 @@ strong {
 }
 
 /* ----------------------------------------------------------- 15. Responsive */
+@media (min-width: 1500px) {
+  :root {
+    --container: 1360px;
+  }
+}
+
+@media (min-width: 1900px) {
+  :root {
+    --container: 1520px;
+  }
+}
+
 @media (max-width: 900px) {
   :root {
     --header-h: 64px;
@@ -1127,7 +1182,7 @@ strong {
   }
 
   .project,
-  .side-card,
+  .project-reverse,
   .timeline-item {
     grid-template-columns: minmax(0, 1fr);
   }
