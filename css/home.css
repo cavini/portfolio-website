@@ -954,8 +954,24 @@ strong {
 /* ---------------------------------------------------------------- 11. Stack */
 .stack-grid {
   display: grid;
+  /* Auto-fit decides the column count from the 198px minimum, which with
+     six cards lands on five and leaves the sixth alone on a row of its
+     own. Below the breakpoints the count is set explicitly so the cards
+     always divide evenly. */
   grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));
   gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .stack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1500px) {
+  .stack-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
 
 .stack-card {
