@@ -7,6 +7,20 @@
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const supportsIO = "IntersectionObserver" in window;
 
+  /* ----------------------------------------------------------- demo video */
+  /* Marked data-autoplay in the markup rather than with the attribute, so a
+     visitor who asked for less motion gets a poster and a play button
+     instead of a loop they did not start. preload is "none" either way:
+     nobody should pay 5.6 MB for a card they scrolled past. */
+  if (!prefersReduced) {
+    for (const video of document.querySelectorAll("video[data-autoplay]")) {
+      video.autoplay = true;
+      video.preload = "metadata";
+      // Fails on its own if the browser refuses; the controls still work.
+      video.play().catch(() => {});
+    }
+  }
+
   /* ------------------------------------------------------------ mobile nav */
   const header = document.querySelector(".site-header");
   const burger = document.querySelector(".burger");

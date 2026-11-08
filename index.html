@@ -279,12 +279,16 @@
 
           <article class="side-card">
             <div class="side-card-media">
-              <a class="media-zoom" href="./resources/precinho.webp" target="_blank"
-                rel="noopener" aria-label="Open the full-size screenshot">
-                <img src="./resources/precinho.webp"
-                  alt="Precinho product page comparing one bottle of olive oil across eight supermarkets"
-                  width="1893" height="875" loading="lazy" decoding="async" />
-              </a>
+              <!-- Hosted on GitHub's CDN rather than committed here: it is
+                   5.6 MB and this repo is three files and a stylesheet. The
+                   screenshot stays as the poster, so the card looks the same
+                   before a frame is fetched and nothing shifts when one is. -->
+              <video class="side-card-video" data-autoplay poster="./resources/precinho.webp"
+                width="1600" height="822" preload="none" muted loop playsinline controls
+                aria-label="Precinho demo: choosing which supermarkets to compare, searching a product, and opening it to see every shop's price">
+                <source src="https://github.com/user-attachments/assets/44c99e38-6b02-4c74-9954-76608aae547a" type="video/mp4" />
+                <a href="./resources/precinho.webp">Screenshot of Precinho comparing one product across eight supermarkets</a>
+              </video>
             </div>
             <div class="side-card-body">
               <h4>Precinho</h4>
@@ -293,7 +297,8 @@
                 cheapest first, with a link straight to that item on the shop&rsquo;s own site. The
                 prices come from the chains themselves. A job runs every night and writes a new row
                 instead of overwriting the old one, so every number on screen has a date and a time
-                attached to it.</p>
+                attached to it. It keeps three days of those and deletes the rest, because eight
+                nights of never deleting anything spent 99% of the storage a free tier allows.</p>
               <p>The screen was the easy half. The ten chains run six different e-commerce platforms
                 between them, so each one gets its own adapter behind a single interface. Prices also
                 turn out to be regional, which none of the chains tell you. The same company charges
@@ -304,10 +309,12 @@
                 it are accepted and quietly ignored.</p>
               <p>Then there is the matching. The same bottle of olive oil carries a different name in
                 every shop, so the app tries the barcode first, then the package size, and hands
-                whatever is left to a language model to judge. 44,929 pairs went through that and
-                every verdict is stored, so the next collection inherits the work instead of paying
-                for it again.</p>
-              <p>Underneath it is Clean Architecture with the dependency rule pointing one way, 669
+                whatever is left to a language model to judge. 41,073 pairs went through it in a
+                single night, batched at half price, and every verdict is stored, so the next
+                collection inherits the work instead of paying for it again. The ones ruled
+                different are the half that lasts: a pair told apart once is never asked about
+                again.</p>
+              <p>Underneath it is Clean Architecture with the dependency rule pointing one way, 725
                 tests across unit, integration and component suites, coverage thresholds enforced in
                 CI, structured logs and metrics on every read, and Big O written next to the
                 decisions that needed it. The whole thing runs on free tiers. Postgres cancels any
