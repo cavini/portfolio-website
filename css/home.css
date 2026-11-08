@@ -793,9 +793,14 @@ strong {
   overflow: hidden;
 }
 
-.side-card-media img {
+.side-card-media img,
+.side-card-media video {
   display: block;
   width: 100%;
+  /* The video carries width and height attributes so the box is reserved
+     before a frame arrives. Without this the element keeps that literal
+     height and letterboxes itself inside it. */
+  height: auto;
   border-radius: var(--r-sm);
   /* Was dimmed to 0.75 and lifted on hover. At this size the screenshot
      is the point of the card, so it is shown as it is. */
@@ -804,6 +809,13 @@ strong {
 
 .side-card:hover .side-card-media img {
   transform: scale(1.015);
+}
+
+/* The video does not lift with the card. The pointer is on its way to the
+   controls, and a target that moves under the cursor is worse than a still
+   one. */
+.side-card-media video {
+  background: var(--bg);
 }
 
 .media-zoom {
