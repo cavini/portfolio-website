@@ -793,7 +793,8 @@ strong {
   overflow: hidden;
 }
 
-.side-card-media img {
+.side-card-media img,
+.side-card-media video {
   display: block;
   width: 100%;
   border-radius: var(--r-sm);

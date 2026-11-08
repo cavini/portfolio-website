@@ -344,11 +344,13 @@
 
           <article class="side-card">
             <div class="side-card-media">
-              <a class="media-zoom" href="./resources/overtone.webp" target="_blank"
-                rel="noopener" aria-label="Open the full-size screenshot">
-                <img src="./resources/overtone.webp" alt="Overtone episode results with word counts and top terms"
-                  width="1911" height="950" loading="lazy" decoding="async" />
-              </a>
+              <!-- The screenshot is the poster, so the card looks the same until
+                   somebody presses play and nothing downloads until they do. The
+                   recording has no audio track: it is a screen capture, and the
+                   label says so rather than leaving people hunting for sound. -->
+              <video src="./resources/overtone-demo.mp4" poster="./resources/overtone.webp"
+                controls muted playsinline preload="none" width="1600" height="852"
+                aria-label="Silent two-minute screen recording of Overtone: an episode is uploaded and split in the browser, transcribed, then word counts, running-joke counts and series totals appear with a timestamp behind each number"></video>
             </div>
             <div class="side-card-body">
               <h4>Overtone</h4>
@@ -361,8 +363,13 @@
                 against a provider allowance that refills as it goes, so the work outlives any single request.
                 Behind that it's Clean Architecture across four layers with the dependency rule enforced in CI,
                 ports and adapters covered by contract suites that run against the fakes and the real
-                implementations, over 950 tests, and every decision written down as an ADR. Built for Brazilian
-                Portuguese first, with the language chosen per episode, and bilingual throughout. It runs on
+                implementations, over 1,600 tests, and every decision written down as an ADR. Each episode's
+                language is worked out from the audio itself: three half-minute windows are sampled from
+                the middle of the recording and the majority decides, deliberately never the opening,
+                because this show starts on music with English lyrics and anything listening to the first
+                thirty seconds would call every episode English. Portuguese and English each get their own
+                analysis pack — stop words, stemmer, dictionary half — so a wrong guess is a refusal rather
+                than a plausible set of wrong numbers. It runs on
                 free tiers with no payment method anywhere, which is also the catch: the hourly transcription
                 allowance is small and there's about a gigabyte of storage, so it's slow and can't hold much.
                 That's the tiers rather than the code, and paid infrastructure scales the same app without a
